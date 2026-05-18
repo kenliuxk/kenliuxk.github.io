@@ -70,9 +70,13 @@ const translations = {
     mastersDegree: "Master of Science, Electrical & Computer Engineering",
     mastersSchool: "University of Delaware",
     mastersDate: "Feb 2019 - Feb 2022",
+    mastersHonorOne: "Graduate Program Scholarship, Feb 2019",
+    mastersHonorTwo: "Graduate Program Scholarship, Aug 2019",
     bachelorsDegree: "Bachelor of Science, Electrical Engineering",
     bachelorsSchool: "University of Delaware",
     bachelorsDate: "Aug 2015 - Dec 2018",
+    bachelorsHonorOne: "Dean's List, May 2018",
+    bachelorsHonorTwo: "Dean's List, Dec 2018",
     contactKicker: "Contact",
     contactTitle: "Let's connect."
   },
@@ -147,9 +151,13 @@ const translations = {
     mastersDegree: "Master of Science, Electrical & Computer Engineering",
     mastersSchool: "University of Delaware",
     mastersDate: "2019 \u5e74 2 \u6708 - 2022 \u5e74 2 \u6708",
+    mastersHonorOne: "Graduate Program Scholarship, 2019 \u5e74 2 \u6708",
+    mastersHonorTwo: "Graduate Program Scholarship, 2019 \u5e74 8 \u6708",
     bachelorsDegree: "Bachelor of Science, Electrical Engineering",
     bachelorsSchool: "University of Delaware",
     bachelorsDate: "2015 \u5e74 8 \u6708 - 2018 \u5e74 12 \u6708",
+    bachelorsHonorOne: "Dean's List, 2018 \u5e74 5 \u6708",
+    bachelorsHonorTwo: "Dean's List, 2018 \u5e74 12 \u6708",
     contactKicker: "\u8054\u7cfb",
     contactTitle: "\u6b22\u8fce\u4ea4\u6d41\u3002"
   }

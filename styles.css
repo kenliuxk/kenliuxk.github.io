@@ -405,6 +405,16 @@ dd {
   font-weight: 760;
 }
 
+.honors-list {
+  display: grid;
+  gap: 6px;
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
 .education-card span {
   flex: 0 0 auto;
   font-size: 14px;

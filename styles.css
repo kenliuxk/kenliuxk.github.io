@@ -141,8 +141,8 @@ p {
 h1 {
   max-width: 760px;
   margin: 0;
-  font-size: clamp(48px, 8vw, 88px);
-  line-height: 0.94;
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 1;
   letter-spacing: 0;
 }
 
@@ -187,7 +187,6 @@ h1 {
 }
 
 .profile-panel,
-.project-card,
 .timeline-item,
 .skill-card,
 .publication-card {
@@ -247,19 +246,18 @@ dd {
 .section-heading h2,
 .contact-section h2 {
   margin: 0;
-  font-size: clamp(30px, 4vw, 48px);
-  line-height: 1.05;
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.12;
   letter-spacing: 0;
 }
 
 .body-copy {
   margin: 34px 0 0;
   color: var(--muted);
-  font-size: 19px;
-  line-height: 1.75;
+  font-size: 17px;
+  line-height: 1.7;
 }
 
-.project-grid,
 .publication-list {
   display: grid;
   gap: 16px;
@@ -273,8 +271,7 @@ dd {
 
 .timeline-item,
 .skill-card,
-.publication-card,
-.project-card {
+.publication-card {
   padding: 24px;
   box-shadow: none;
 }
@@ -297,6 +294,7 @@ dd {
 .skill-card p {
   margin: 0;
   color: var(--muted);
+  font-size: 15px;
   line-height: 1.6;
 }
 
@@ -314,6 +312,7 @@ dd {
   margin: 0;
   padding-left: 20px;
   color: var(--muted);
+  font-size: 15px;
   line-height: 1.65;
 }
 
@@ -349,6 +348,7 @@ dd {
 .publication-card p {
   margin: 0;
   color: var(--muted);
+  font-size: 15px;
   line-height: 1.6;
 }
 
@@ -373,29 +373,6 @@ dd {
 
 .publication-link:hover {
   color: var(--accent-strong);
-}
-
-.project-topline {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 820;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.project-card h3 {
-  margin: 16px 0 10px;
-  font-size: 22px;
-  line-height: 1.2;
-}
-
-.project-card p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.65;
 }
 
 .contact-section {
@@ -454,7 +431,6 @@ dd {
   .timeline,
   .skills-grid,
   .publication-list,
-  .project-grid,
   .contact-links {
     margin-top: 28px;
   }

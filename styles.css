@@ -189,7 +189,8 @@ h1 {
 .profile-panel,
 .timeline-item,
 .skill-card,
-.publication-card {
+.publication-card,
+.education-card {
   border: 1px solid rgba(219, 226, 236, 0.88);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.78);
@@ -258,7 +259,8 @@ dd {
   line-height: 1.7;
 }
 
-.publication-list {
+.publication-list,
+.education-list {
   display: grid;
   gap: 16px;
 }
@@ -271,7 +273,8 @@ dd {
 
 .timeline-item,
 .skill-card,
-.publication-card {
+.publication-card,
+.education-card {
   padding: 24px;
   box-shadow: none;
 }
@@ -375,6 +378,38 @@ dd {
   color: var(--accent-strong);
 }
 
+.education-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.education-card h3,
+.education-card p {
+  margin: 0;
+}
+
+.education-card h3 {
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.education-card p,
+.education-card span {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.education-card p {
+  margin-top: 8px;
+  font-weight: 760;
+}
+
+.education-card span {
+  flex: 0 0 auto;
+  font-size: 14px;
+}
+
 .contact-section {
   display: flex;
   justify-content: space-between;
@@ -431,8 +466,14 @@ dd {
   .timeline,
   .skills-grid,
   .publication-list,
+  .education-list,
   .contact-links {
     margin-top: 28px;
+  }
+
+  .education-card {
+    display: grid;
+    gap: 12px;
   }
 
   .skills-grid {

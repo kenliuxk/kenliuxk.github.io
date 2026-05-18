@@ -4,6 +4,7 @@ const translations = {
     navExperience: "Experience",
     navSkills: "Skills",
     navPublications: "Publications",
+    navEducation: "Education",
     navContact: "Contact",
     eyebrow: "AWS S3 software development engineer | Seattle, WA",
     heroTitle: "Hi, I'm Ken Liu.",
@@ -64,6 +65,14 @@ const translations = {
     publicationTwoSummary:
       "Demonstrated StaticCodeCT, a low-dose X-ray CT architecture that uses a single static coded aperture to estimate missing detector measurements from correlated projection data. The study tested real cone-beam CT reconstructions, compared multiple coded-aperture fabrication methods, and optimized aperture patterns for practical deployment.",
     publicationLink: "View paper",
+    educationKicker: "Education",
+    educationTitle: "Academic foundation in electrical and computer engineering.",
+    mastersDegree: "Master of Science, Electrical & Computer Engineering",
+    mastersSchool: "University of Delaware",
+    mastersDate: "Feb 2019 - Feb 2022",
+    bachelorsDegree: "Bachelor of Science, Electrical Engineering",
+    bachelorsSchool: "University of Delaware",
+    bachelorsDate: "Aug 2015 - Dec 2018",
     contactKicker: "Contact",
     contactTitle: "Let's connect."
   },
@@ -72,6 +81,7 @@ const translations = {
     navExperience: "\u7ecf\u5386",
     navSkills: "\u6280\u80fd",
     navPublications: "\u8bba\u6587",
+    navEducation: "\u6559\u80b2",
     navContact: "\u8054\u7cfb",
     eyebrow: "AWS S3 \u8f6f\u4ef6\u5f00\u53d1\u5de5\u7a0b\u5e08 | Seattle, WA",
     heroTitle: "\u4f60\u597d\uff0c\u6211\u662f Ken Liu\u3002",
@@ -132,6 +142,14 @@ const translations = {
     publicationTwoSummary:
       "\u9a8c\u8bc1\u4e86 StaticCodeCT \u8fd9\u79cd\u4f4e\u5242\u91cf X-ray CT \u67b6\u6784\uff1a\u5b83\u4f7f\u7528\u5355\u4e2a\u9759\u6001 coded aperture\uff0c\u5229\u7528\u6295\u5f71\u6570\u636e\u95f4\u7684\u9ad8\u76f8\u5173\u6027\u6765\u4f30\u8ba1\u63a2\u6d4b\u5668\u4e0a\u672a\u89c2\u6d4b\u7684\u6d4b\u91cf\u3002\u8be5\u7814\u7a76\u5728\u771f\u5b9e cone-beam CT \u7cfb\u7edf\u4e0a\u8fdb\u884c\u91cd\u5efa\u5b9e\u9a8c\uff0c\u6bd4\u8f83\u591a\u79cd coded aperture \u5236\u9020\u65b9\u6cd5\uff0c\u5e76\u4f18\u5316 aperture pattern \u4ee5\u652f\u6491\u5b9e\u9645\u90e8\u7f72\u3002",
     publicationLink: "\u67e5\u770b\u8bba\u6587",
+    educationKicker: "\u6559\u80b2\u7ecf\u5386",
+    educationTitle: "\u7535\u6c14\u4e0e\u8ba1\u7b97\u673a\u5de5\u7a0b\u80cc\u666f\u6253\u4e0b\u7684\u6280\u672f\u57fa\u7840\u3002",
+    mastersDegree: "Master of Science, Electrical & Computer Engineering",
+    mastersSchool: "University of Delaware",
+    mastersDate: "2019 \u5e74 2 \u6708 - 2022 \u5e74 2 \u6708",
+    bachelorsDegree: "Bachelor of Science, Electrical Engineering",
+    bachelorsSchool: "University of Delaware",
+    bachelorsDate: "2015 \u5e74 8 \u6708 - 2018 \u5e74 12 \u6708",
     contactKicker: "\u8054\u7cfb",
     contactTitle: "\u6b22\u8fce\u4ea4\u6d41\u3002"
   }

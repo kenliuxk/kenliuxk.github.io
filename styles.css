@@ -246,7 +246,7 @@ dd {
 .section-heading h2,
 .contact-section h2 {
   margin: 0;
-  font-size: clamp(30px, 4vw, 48px);
+  font-size: clamp(36px, 4.8vw, 58px);
   line-height: 1.05;
   letter-spacing: 0;
 }
@@ -254,8 +254,8 @@ dd {
 .body-copy {
   margin: 34px 0 0;
   color: var(--muted);
-  font-size: 19px;
-  line-height: 1.75;
+  font-size: 17px;
+  line-height: 1.7;
 }
 
 .publication-list {
@@ -294,6 +294,7 @@ dd {
 .skill-card p {
   margin: 0;
   color: var(--muted);
+  font-size: 15px;
   line-height: 1.6;
 }
 
@@ -311,6 +312,7 @@ dd {
   margin: 0;
   padding-left: 20px;
   color: var(--muted);
+  font-size: 15px;
   line-height: 1.65;
 }
 
@@ -346,6 +348,7 @@ dd {
 .publication-card p {
   margin: 0;
   color: var(--muted);
+  font-size: 15px;
   line-height: 1.6;
 }
 

@@ -187,7 +187,6 @@ h1 {
 }
 
 .profile-panel,
-.project-card,
 .timeline-item,
 .skill-card,
 .publication-card {
@@ -259,7 +258,6 @@ dd {
   line-height: 1.75;
 }
 
-.project-grid,
 .publication-list {
   display: grid;
   gap: 16px;
@@ -273,8 +271,7 @@ dd {
 
 .timeline-item,
 .skill-card,
-.publication-card,
-.project-card {
+.publication-card {
   padding: 24px;
   box-shadow: none;
 }
@@ -375,29 +372,6 @@ dd {
   color: var(--accent-strong);
 }
 
-.project-topline {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 820;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.project-card h3 {
-  margin: 16px 0 10px;
-  font-size: 22px;
-  line-height: 1.2;
-}
-
-.project-card p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.65;
-}
-
 .contact-section {
   display: flex;
   justify-content: space-between;
@@ -454,7 +428,6 @@ dd {
   .timeline,
   .skills-grid,
   .publication-list,
-  .project-grid,
   .contact-links {
     margin-top: 28px;
   }

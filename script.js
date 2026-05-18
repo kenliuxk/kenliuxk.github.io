@@ -33,6 +33,8 @@ const translations = {
       "Re-architected request message processing with cloud database integration, reducing CPU usage and processing time by around 90%.",
     awsPoint4:
       "Improved memory efficiency and Spark/EMR data processing workflows, reducing runtime and annual infrastructure cost.",
+    awsPoint5:
+      "Established a cross-team rapid archival data restoration service for S3 Glacier Flexible Retrieval workflows, reducing restore time by up to 85% from hours to minutes.",
     researchRole: "Research Assistant",
     researchCompany: "University of Delaware",
     researchDate: "Feb 2019 - Feb 2022",
@@ -114,6 +116,8 @@ const translations = {
       "\u91cd\u6784\u8bf7\u6c42\u6d88\u606f\u5904\u7406\u7ec4\u4ef6\u5e76\u96c6\u6210\u4e91\u6570\u636e\u5e93\u65b9\u6848\uff0c\u5c06 CPU \u4f7f\u7528\u548c\u6d88\u606f\u5904\u7406\u65f6\u95f4\u964d\u4f4e\u7ea6 90%\u3002",
     awsPoint4:
       "\u4f18\u5316\u5185\u5b58\u6548\u7387\u548c Spark/EMR \u6570\u636e\u5904\u7406\u6d41\u7a0b\uff0c\u964d\u4f4e\u8fd0\u884c\u65f6\u95f4\u548c\u5e74\u5ea6\u57fa\u7840\u8bbe\u65bd\u6210\u672c\u3002",
+    awsPoint5:
+      "\u5efa\u7acb\u8de8\u56e2\u961f\u7684 S3 Glacier Flexible Retrieval \u5feb\u901f\u5f52\u6863\u6570\u636e\u6062\u590d\u670d\u52a1\uff0c\u5c06 restore \u65f6\u95f4\u6700\u9ad8\u7f29\u77ed 85%\uff0c\u4ece\u5c0f\u65f6\u7ea7\u964d\u81f3\u5206\u949f\u7ea7\u3002",
     researchRole: "Research Assistant",
     researchCompany: "University of Delaware",
     researchDate: "2019 \u5e74 2 \u6708 - 2022 \u5e74 2 \u6708",

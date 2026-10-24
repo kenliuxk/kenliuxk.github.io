@@ -22,6 +22,8 @@
   --seg-active: rgba(0, 0, 0, 0.07);
 
   --nav-bg: rgba(255, 255, 255, 0.72);
+  --fab-bg: rgba(255, 255, 255, 0.94);
+  --fab-shadow: 0 10px 28px -12px rgba(0, 0, 0, 0.45);
   --radius: 980px;
 
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
@@ -51,6 +53,8 @@
     --seg-active: rgba(255, 255, 255, 0.14);
 
     --nav-bg: rgba(0, 0, 0, 0.72);
+  --fab-bg: rgba(28, 28, 30, 0.9);
+  --fab-shadow: 0 10px 30px -14px rgba(0, 0, 0, 0.9);
   }
 }
 
@@ -73,6 +77,8 @@
   --seg-active: rgba(255, 255, 255, 0.14);
 
   --nav-bg: rgba(0, 0, 0, 0.72);
+  --fab-bg: rgba(28, 28, 30, 0.9);
+  --fab-shadow: 0 10px 30px -14px rgba(0, 0, 0, 0.9);
 }
 
 * {
@@ -941,6 +947,56 @@ h2 {
   color: var(--ink);
 }
 
+/* Floating "back to top" control, parked in the bottom-right corner. */
+.to-top {
+  position: fixed;
+  right: clamp(14px, 2.2vw, 26px);
+  bottom: calc(clamp(14px, 2.2vw, 26px) + env(safe-area-inset-bottom, 0px));
+  z-index: 40;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--hairline);
+  border-radius: 50%;
+  background: var(--fab-bg);
+  color: var(--ink-2);
+  box-shadow: var(--fab-shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  transition: opacity 0.28s var(--ease), transform 0.28s var(--ease),
+    visibility 0.28s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.to-top svg {
+  width: 17px;
+  height: 17px;
+}
+
+.to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.to-top:hover {
+  border-color: var(--ink-3);
+  color: var(--ink);
+}
+
+.to-top:active {
+  transform: scale(0.96);
+}
+
+@media print {
+  .to-top {
+    display: none;
+  }
+}
+
 /* --------------------------------------------------------------------------
    Reveal on scroll
    -------------------------------------------------------------------------- */
@@ -1062,6 +1118,18 @@ h2 {
 }
 
 @media (max-width: 620px) {
+  .to-top {
+    width: 40px;
+    height: 40px;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .to-top svg {
+    width: 15px;
+    height: 15px;
+  }
+
   .job-head {
     grid-template-columns: 32px minmax(0, 1fr);
     row-gap: 8px;

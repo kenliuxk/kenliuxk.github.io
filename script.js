@@ -383,12 +383,19 @@ if (yearElement) {
    -------------------------------------------------------------------------- */
 
 const header = document.querySelector(".site-header");
+const toTop = document.getElementById("toTop");
 let scrollQueued = false;
 
 function updateHeader() {
   if (header) {
     header.classList.toggle("is-scrolled", window.scrollY > 8);
   }
+
+  // The floating control only appears once there is something to scroll back from.
+  if (toTop) {
+    toTop.classList.toggle("is-visible", window.scrollY > 480);
+  }
+
   scrollQueued = false;
 }
 

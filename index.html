@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d1d1f'/%3E%3Ctext x='16' y='22' font-family='-apple-system,Segoe UI,sans-serif' font-size='16' font-weight='600' text-anchor='middle' fill='%23ffffff'%3EK%3C/text%3E%3C/svg%3E">
     <!-- Bump ?v= on both files whenever styles.css or script.js changes, so
          returning visitors never pair new markup with a cached stylesheet. -->
-    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="styles.css?v=6">
     <script>
       // Apply the saved appearance before first paint to avoid a flash.
       (function () {
@@ -79,7 +79,10 @@
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="container hero-copy">
-          <p class="eyebrow" data-i18n="eyebrow">General Motors 路 Autonomous Vehicle Data Platform</p>
+          <p class="eyebrow">
+            <span class="logo logo--gm" aria-hidden="true"></span>
+            <span data-i18n="eyebrow">General Motors · Autonomous Vehicle Data Platform</span>
+          </p>
           <h1 id="hero-title" data-i18n="heroTitle">Hi, I'm Ken Liu.</h1>
           <p class="lede" data-i18n="heroSubtitle">
             I am a software engineer with 4+ years of experience building distributed systems and data infrastructure. I now build ML data platforms for autonomous vehicles at General Motors, after four years on AWS S3.
@@ -97,6 +100,10 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
             </a>
           </div>
+          <p class="availability">
+            <span class="availability-dot" aria-hidden="true"></span>
+            <span data-i18n="statusValue">Not actively looking, but open to the right opportunity</span>
+          </p>
         </div>
 
         <div class="container">
@@ -129,7 +136,7 @@
           </div>
           <div class="band-body">
             <p class="body-copy" data-i18n="aboutBody" data-reveal>
-              I work on the autonomous vehicle data platform at General Motors, building the next generation of distributed ML data infrastructure 鈥?ingestion, processing, and serving 鈥?on GCP and open-source frameworks. Before that I spent four years at AWS S3 on large-scale distributed systems, data lifecycle services, and high-throughput backend APIs, with a focus on reliability, performance, and resource efficiency. Outside of infrastructure, I explore AI applications and creative tools that turn complex ideas into clear, usable products.
+              I work on the autonomous vehicle data platform at General Motors, building the next generation of distributed ML data infrastructure — ingestion, processing, and serving — on GCP and open-source frameworks. Before that I spent four years at AWS S3 on large-scale distributed systems, data lifecycle services, and high-throughput backend APIs, with a focus on reliability, performance, and resource efficiency. Outside of infrastructure, I explore AI applications and creative tools that turn complex ideas into clear, usable products.
             </p>
             <dl class="meta-list" data-reveal style="--d: 80ms">
               <div>
@@ -155,13 +162,16 @@
             <div class="jobs">
               <article class="job" data-reveal>
                 <div class="job-head">
-                  <div>
-                    <h3 data-i18n="gmRole">Software Engineer</h3>
+                  <span class="job-logo"><span class="logo logo--gm" aria-hidden="true"></span></span>
+                  <div class="job-title">
+                    <div class="job-title-row">
+                      <h3 data-i18n="gmRole">Software Engineer</h3>
+                      <span class="badge-current" data-i18n="currentBadge">Current</span>
+                    </div>
                     <p class="job-company" data-i18n="gmCompany">General Motors &middot; Autonomous Vehicle Data Platform</p>
                   </div>
                   <div class="job-side">
                     <span class="job-date" data-i18n="gmDate">Aug 2026 - Present</span>
-                    <span class="badge-current" data-i18n="currentBadge">Current</span>
                   </div>
                 </div>
                 <ul class="impact-list">
@@ -174,9 +184,10 @@
 
               <article class="job" data-reveal style="--d: 80ms">
                 <div class="job-head">
+                  <span class="job-logo"><span class="logo logo--aws" aria-hidden="true"></span></span>
                   <div>
                     <h3 data-i18n="awsRole">Software Development Engineer</h3>
-                    <p class="job-company" data-i18n="awsCompany">Amazon Web Services</p>
+                    <p class="job-company" data-i18n="awsCompany">Amazon Web Services &middot; S3</p>
                   </div>
                   <div class="job-side">
                     <span class="job-date" data-i18n="awsDate">Feb 2022 - Jul 2026</span>
@@ -193,9 +204,10 @@
 
               <article class="job" data-reveal style="--d: 80ms">
                 <div class="job-head">
+                  <span class="job-logo"><span class="logo logo--ud" aria-hidden="true"></span></span>
                   <div>
                     <h3 data-i18n="researchRole">Research Assistant</h3>
-                    <p class="job-company" data-i18n="researchCompany">University of Delaware</p>
+                    <p class="job-company" data-i18n="researchCompany">University of Delaware &middot; Computational Imaging and Machine Learning Laboratory</p>
                   </div>
                   <div class="job-side">
                     <span class="job-date" data-i18n="researchDate">Feb 2019 - Feb 2022</span>
@@ -233,7 +245,8 @@
               </article>
               <article class="skill-card" data-reveal style="--d: 60ms">
                 <h3 data-i18n="skillCloud">Cloud Platform</h3>
-                <p data-i18n="skillCloudList">AWS: CloudFormation, DynamoDB, EBS, EC2, ECS, EMR, Lambda, S3, SQS &middot; GCP</p>
+                <p data-i18n="skillAwsList">AWS: CloudFormation, DynamoDB, EBS, EC2, ECS, EMR, Lambda, S3, SQS</p>
+                <p data-i18n="skillGcpList">GCP: BigQuery, Bigtable, Dataflow, Cloud Storage, Pub/Sub</p>
               </article>
               <article class="skill-card" data-reveal style="--d: 120ms">
                 <h3 data-i18n="skillAgents">AI-assisted Engineering</h3>
@@ -356,6 +369,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=6"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Ken Liu 鈥?personal site
+   Ken Liu — personal site
    Quiet, typographic design: one typeface, one accent-free palette,
    hairline rules, and a lot of air. Adapts to light and dark.
    ========================================================================== */
@@ -18,7 +18,7 @@
   --btn-bg: #1d1d1f;
   --btn-bg-hover: #000000;
   --btn-ink: #ffffff;
-  --dot: #34c759;
+  --dot: #e9a825;
   --seg-active: rgba(0, 0, 0, 0.07);
 
   --nav-bg: rgba(255, 255, 255, 0.72);
@@ -31,7 +31,7 @@
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* Dark palette 鈥?applied automatically unless the visitor picked light. */
+/* Dark palette — applied automatically unless the visitor picked light. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
@@ -47,7 +47,7 @@
     --btn-bg: #f5f5f7;
     --btn-bg-hover: #ffffff;
     --btn-ink: #000000;
-    --dot: #30d158;
+    --dot: #ffc857;
     --seg-active: rgba(255, 255, 255, 0.14);
 
     --nav-bg: rgba(0, 0, 0, 0.72);
@@ -69,7 +69,7 @@
   --btn-bg: #f5f5f7;
   --btn-bg-hover: #ffffff;
   --btn-ink: #000000;
-  --dot: #30d158;
+  --dot: #ffc857;
   --seg-active: rgba(255, 255, 255, 0.14);
 
   --nav-bg: rgba(0, 0, 0, 0.72);
@@ -294,12 +294,56 @@ a {
 }
 
 .eyebrow {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  justify-content: center;
   margin: 0 0 20px;
   color: var(--ink-3);
   font-size: 12.5px;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.eyebrow .logo {
+  width: 24px;
+  height: 24px;
+  opacity: 0.85;
+}
+
+/* Company / school marks, tinted by the surrounding text colour. */
+.logo {
+  display: inline-block;
+  flex: 0 0 auto;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+.logo--gm {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("assets/logos/gm.svg");
+  mask-image: url("assets/logos/gm.svg");
+}
+
+.logo--aws {
+  width: 30px;
+  height: 18px;
+  -webkit-mask-image: url("assets/logos/aws.svg");
+  mask-image: url("assets/logos/aws.svg");
+}
+
+.logo--ud {
+  width: 22px;
+  height: 28px;
+  -webkit-mask-image: url("assets/logos/ud.png");
+  mask-image: url("assets/logos/ud.png");
 }
 
 h1 {
@@ -545,11 +589,34 @@ h2 {
 }
 
 .job-head {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  gap: 0 12px;
+  align-items: start;
+}
+
+.job-logo {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  padding-top: 4px;
+  color: var(--ink-2);
+}
+
+.job-title-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 24px;
-  align-items: flex-start;
-  justify-content: space-between;
+  gap: 6px 10px;
+  align-items: center;
+}
+
+.job-side {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 3px;
 }
 
 .job h3 {
@@ -633,6 +700,10 @@ h2 {
   font-size: 14px;
   line-height: 1.6;
   max-width: 34ch;
+}
+
+.skill-card p + p {
+  margin-top: 3px;
 }
 
 /* Publications -------------------------------------------------------------- */
@@ -990,13 +1061,22 @@ h2 {
   }
 }
 
-@media (max-width: 560px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 620px) {
+  .job-head {
+    grid-template-columns: 32px minmax(0, 1fr);
+    row-gap: 8px;
   }
 
   .job-side {
-    flex-wrap: wrap;
+    grid-column: 2;
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 
   .actions {

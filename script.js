@@ -21,6 +21,7 @@ const translations = {
     heroSubtitle:
       "I am a software engineer with 4+ years of experience building distributed systems and data infrastructure. I now build ML data platforms for autonomous vehicles at General Motors, after four years on AWS S3.",
     resumeButton: "View Resume",
+    statusValue: "Not actively looking — open to the right opportunity",
     statYears: "4+",
     statYearsLabel: "Years of experience",
     statCost: "$49M",
@@ -50,7 +51,7 @@ const translations = {
     gmPoint4:
       "Champion engineering and operational excellence by continuously improving systems and processes.",
     awsRole: "Software Development Engineer",
-    awsCompany: "Amazon Web Services",
+    awsCompany: "Amazon Web Services · S3",
     awsDate: "Feb 2022 - Jul 2026",
     currentBadge: "Current",
     awsPoint1:
@@ -64,7 +65,7 @@ const translations = {
     awsPoint5:
       "Established a cross-team rapid archival data restoration service for S3 Glacier Flexible Retrieval workflows, reducing restore time by up to 85% from hours to minutes.",
     researchRole: "Research Assistant",
-    researchCompany: "University of Delaware",
+    researchCompany: "University of Delaware · Computational Imaging and Machine Learning Laboratory",
     researchDate: "Feb 2019 - Feb 2022",
     researchPoint1:
       "Developed image reconstruction and inverse-problem algorithms using MATLAB and Python.",
@@ -79,7 +80,8 @@ const translations = {
     skillData: "Data & Infrastructure",
     skillDataList: "Data storage systems, Apache Spark, ML data platforms, ingestion and processing pipelines",
     skillCloud: "Cloud Platform",
-    skillCloudList: "AWS: CloudFormation, DynamoDB, EBS, EC2, ECS, EMR, Lambda, S3, SQS · GCP",
+    skillAwsList: "AWS: CloudFormation, DynamoDB, EBS, EC2, ECS, EMR, Lambda, S3, SQS",
+    skillGcpList: "GCP: BigQuery, Bigtable, Dataflow, Cloud Storage, Pub/Sub",
     skillAgents: "AI-assisted Engineering",
     skillAgentsList: "ChatGPT Codex, Claude Code, AWS Kiro, GitHub Copilot",
     skillSpecialties: "Specialties",
@@ -132,6 +134,7 @@ const translations = {
     heroSubtitle:
       "\u6211\u662f\u4e00\u540d\u8f6f\u4ef6\u5de5\u7a0b\u5e08\uff0c\u62e5\u6709 4 \u5e74\u4ee5\u4e0a\u5206\u5e03\u5f0f\u7cfb\u7edf\u4e0e\u6570\u636e\u57fa\u7840\u8bbe\u65bd\u7ecf\u9a8c\u3002\u76ee\u524d\u5728 General Motors \u4e3a\u81ea\u52a8\u9a7e\u9a76\u6784\u5efa\u673a\u5668\u5b66\u4e60\u6570\u636e\u5e73\u53f0\uff0c\u6b64\u524d\u5728 AWS S3 \u5de5\u4f5c\u4e86\u56db\u5e74\u3002",
     resumeButton: "\u67e5\u770b\u7b80\u5386",
+    statusValue: "\u6682\u4e0d\u4e3b\u52a8\u6c42\u804c\uff0c\u6b22\u8fce\u4e86\u89e3\u5408\u9002\u7684\u673a\u4f1a",
     statYears: "4+",
     statYearsLabel: "\u4ece\u4e1a\u5e74\u9650",
     statCost: "$49M",
@@ -161,7 +164,7 @@ const translations = {
     gmPoint4:
       "\u6301\u7eed\u6539\u5584\u7cfb\u7edf\u4e0e\u6d41\u7a0b\uff0c\u63a8\u52a8\u5de5\u7a0b\u4e0e\u8fd0\u7ef4\u8d28\u91cf\u7684\u63d0\u5347\u3002",
     awsRole: "Software Development Engineer",
-    awsCompany: "Amazon Web Services",
+    awsCompany: "Amazon Web Services \u00b7 S3",
     awsDate: "2022 \u5e74 2 \u6708 - 2026 \u5e74 7 \u6708",
     currentBadge: "\u5728\u804c",
     awsPoint1:
@@ -175,7 +178,7 @@ const translations = {
     awsPoint5:
       "\u5efa\u7acb\u8de8\u56e2\u961f\u7684 S3 Glacier Flexible Retrieval \u5feb\u901f\u5f52\u6863\u6570\u636e\u6062\u590d\u670d\u52a1\uff0c\u5c06 restore \u65f6\u95f4\u6700\u9ad8\u7f29\u77ed 85%\uff0c\u4ece\u5c0f\u65f6\u7ea7\u964d\u81f3\u5206\u949f\u7ea7\u3002",
     researchRole: "Research Assistant",
-    researchCompany: "University of Delaware",
+    researchCompany: "University of Delaware · Computational Imaging and Machine Learning Laboratory",
     researchDate: "2019 \u5e74 2 \u6708 - 2022 \u5e74 2 \u6708",
     researchPoint1:
       "\u4f7f\u7528 MATLAB \u548c Python \u5f00\u53d1\u56fe\u50cf\u91cd\u5efa\u4e0e\u9006\u95ee\u9898\u7b97\u6cd5\u3002",
@@ -190,7 +193,8 @@ const translations = {
     skillData: "\u6570\u636e\u4e0e\u57fa\u7840\u8bbe\u65bd",
     skillDataList: "\u5b58\u50a8\u7cfb\u7edf\u3001Apache Spark\u3001ML \u6570\u636e\u5e73\u53f0\u3001\u6570\u636e\u5165\u6e56\u4e0e\u5904\u7406\u7ba1\u9053",
     skillCloud: "\u4e91\u5e73\u53f0",
-    skillCloudList: "AWS: CloudFormation, DynamoDB, EBS, EC2, ECS, EMR, Lambda, S3, SQS \u00b7 GCP",
+    skillAwsList: "AWS: CloudFormation, DynamoDB, EBS, EC2, ECS, EMR, Lambda, S3, SQS",
+    skillGcpList: "GCP: BigQuery, Bigtable, Dataflow, Cloud Storage, Pub/Sub",
     skillAgents: "AI \u8f85\u52a9\u5de5\u7a0b",
     skillAgentsList: "ChatGPT Codex, Claude Code, AWS Kiro, GitHub Copilot",
     skillSpecialties: "\u4e13\u957f",

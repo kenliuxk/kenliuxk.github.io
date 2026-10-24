@@ -1,3 +1,9 @@
+/* Ken Liu — personal site
+   Bilingual content (EN / 中文), scroll state, subtle scroll-spy, and
+   reveal-on-scroll. No dependencies. */
+
+const STORAGE_KEY = "preferred-language";
+
 const translations = {
   en: {
     navAbout: "About",
@@ -11,11 +17,18 @@ const translations = {
     heroSubtitle:
       "I am a software development engineer with 4+ years of experience building distributed systems and data infrastructure at AWS S3, with ongoing interests in AI applications and creative tools.",
     resumeButton: "View Resume",
+    statusValue: "Open to software engineering opportunities",
+    statYears: "4+",
+    statYearsLabel: "Years at AWS",
+    statCost: "$49M",
+    statCostLabel: "CapEx saved",
+    statCpu: "90%",
+    statCpuLabel: "Less CPU time",
+    statRestore: "85%",
+    statRestoreLabel: "Faster restores",
     locationLabel: "Location",
     focusLabel: "Core Focus",
     focusValue: "Distributed systems, cloud infrastructure, backend APIs, AI applications",
-    statusLabel: "Status",
-    statusValue: "Open to software engineering opportunities",
     aboutKicker: "About",
     aboutTitle: "Reliable cloud infrastructure engineering with a creator's eye.",
     aboutBody:
@@ -25,6 +38,7 @@ const translations = {
     awsRole: "Software Development Engineer",
     awsCompany: "Amazon Web Services",
     awsDate: "Feb 2022 - Present",
+    currentBadge: "Current",
     awsPoint1:
       "Designed and built a distributed data lifecycle management service for expired checksum-validation data copies, improving storage efficiency.",
     awsPoint2:
@@ -84,7 +98,13 @@ const translations = {
     bachelorsHonorOne: "Dean's List, May 2018",
     bachelorsHonorTwo: "Dean's List, Dec 2018",
     contactKicker: "Contact",
-    contactTitle: "Let's connect."
+    contactTitle: "Let's connect.",
+    footerNote: "Hand-built with HTML, CSS, and a little JavaScript.",
+    backToTop: "Back to top",
+    themeLabel: "Appearance",
+    themeSystem: "Use system setting",
+    themeLight: "Light",
+    themeDark: "Dark"
   },
   zh: {
     navAbout: "\u5173\u4e8e",
@@ -98,11 +118,18 @@ const translations = {
     heroSubtitle:
       "\u6211\u662f\u4e00\u540d\u8f6f\u4ef6\u5f00\u53d1\u5de5\u7a0b\u5e08\uff0c\u62e5\u6709 4 \u5e74\u4ee5\u4e0a AWS S3 \u5206\u5e03\u5f0f\u7cfb\u7edf\u548c\u6570\u636e\u57fa\u7840\u8bbe\u65bd\u7ecf\u9a8c\uff0c\u4e5f\u5173\u6ce8 AI \u5e94\u7528\u548c\u521b\u4f5c\u5de5\u5177\u3002",
     resumeButton: "\u67e5\u770b\u7b80\u5386",
+    statusValue: "\u6b63\u5728\u5bfb\u627e\u8f6f\u4ef6\u5de5\u7a0b\u76f8\u5173\u673a\u4f1a",
+    statYears: "4+",
+    statYearsLabel: "AWS \u5e74\u8d44",
+    statCost: "$49M",
+    statCostLabel: "CapEx \u8282\u7701",
+    statCpu: "90%",
+    statCpuLabel: "CPU \u65f6\u95f4\u964d\u4f4e",
+    statRestore: "85%",
+    statRestoreLabel: "\u6062\u590d\u63d0\u901f",
     locationLabel: "\u6240\u5728\u5730",
     focusLabel: "\u6838\u5fc3\u65b9\u5411",
     focusValue: "\u5206\u5e03\u5f0f\u7cfb\u7edf\u3001\u4e91\u57fa\u7840\u8bbe\u65bd\u3001\u540e\u7aef API\u3001AI \u5e94\u7528",
-    statusLabel: "\u5f53\u524d\u72b6\u6001",
-    statusValue: "\u6b63\u5728\u5bfb\u627e\u8f6f\u4ef6\u5de5\u7a0b\u76f8\u5173\u673a\u4f1a",
     aboutKicker: "\u5173\u4e8e\u6211",
     aboutTitle: "\u53ef\u9760\u7684\u4e91\u57fa\u7840\u8bbe\u65bd\u5de5\u7a0b\u80fd\u529b\uff0c\u4e5f\u4fdd\u7559\u521b\u4f5c\u8005\u7684\u89c6\u89d2\u3002",
     aboutBody:
@@ -112,6 +139,7 @@ const translations = {
     awsRole: "Software Development Engineer",
     awsCompany: "Amazon Web Services",
     awsDate: "2022 \u5e74 2 \u6708\u81f3\u4eca",
+    currentBadge: "\u5728\u804c",
     awsPoint1:
       "\u8bbe\u8ba1\u5e76\u6784\u5efa\u5206\u5e03\u5f0f\u6570\u636e\u751f\u547d\u5468\u671f\u7ba1\u7406\u670d\u52a1\uff0c\u6e05\u7406\u6821\u9a8c\u6d41\u7a0b\u4e2d\u7684\u8fc7\u671f\u6570\u636e\u526f\u672c\uff0c\u63d0\u5347\u5b58\u50a8\u6548\u7387\u3002",
     awsPoint2:
@@ -139,7 +167,7 @@ const translations = {
     skillDataList: "\u5b58\u50a8\u7cfb\u7edf\u3001Apache Spark\u3001\u5927\u89c4\u6a21\u6570\u636e\u5904\u7406",
     skillCloud: "\u4e91\u5e73\u53f0",
     skillCloudList: "AWS: CloudFormation, DynamoDB, EBS, EC2, ECS, EMR, Lambda, S3, SQS",
-    skillAgents: "\u0041\u0049 \u8f85\u52a9\u5de5\u7a0b",
+    skillAgents: "AI \u8f85\u52a9\u5de5\u7a0b",
     skillAgentsList: "ChatGPT Codex, Claude Code, AWS Kiro, GitHub Copilot",
     skillSpecialties: "\u4e13\u957f",
     skillSpecialtiesList: "\u7cfb\u7edf\u8bbe\u8ba1\u3001\u6027\u80fd\u4f18\u5316\u3001\u53ef\u6269\u5c55\u6027\u3001\u53ef\u9760\u6027\u5de5\u7a0b",
@@ -171,29 +199,237 @@ const translations = {
     bachelorsHonorOne: "Dean's List, 2018 \u5e74 5 \u6708",
     bachelorsHonorTwo: "Dean's List, 2018 \u5e74 12 \u6708",
     contactKicker: "\u8054\u7cfb",
-    contactTitle: "\u6b22\u8fce\u4ea4\u6d41\u3002"
+    contactTitle: "\u6b22\u8fce\u4ea4\u6d41\u3002",
+    footerNote: "\u7528 HTML\u3001CSS \u548c\u4e00\u70b9 JavaScript \u624b\u5de5\u642d\u5efa\u3002",
+    backToTop: "\u56de\u5230\u9876\u90e8",
+    themeLabel: "\u5916\u89c2",
+    themeSystem: "\u8ddf\u968f\u7cfb\u7edf",
+    themeLight: "\u6d45\u8272",
+    themeDark: "\u6df1\u8272"
   }
 };
 
-const buttons = document.querySelectorAll(".lang-button");
+/* --------------------------------------------------------------------------
+   Language switching
+   -------------------------------------------------------------------------- */
+
+const langButtons = document.querySelectorAll(".lang-button");
 const translatable = document.querySelectorAll("[data-i18n]");
 
 function setLanguage(lang) {
+  const dict = translations[lang] || translations.en;
+
   document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+
   translatable.forEach((element) => {
-    const key = element.dataset.i18n;
-    element.textContent = translations[lang][key];
+    const value = dict[element.dataset.i18n];
+    if (typeof value === "string") {
+      element.textContent = value;
+    }
   });
 
-  buttons.forEach((button) => {
-    button.classList.toggle("active", button.dataset.lang === lang);
+  // Attributes (aria-labels, tooltips) that also need translating.
+  document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
+    const value = dict[element.dataset.i18nAria];
+    if (typeof value === "string") {
+      element.setAttribute("aria-label", value);
+    }
   });
 
-  localStorage.setItem("preferred-language", lang);
+  document.querySelectorAll("[data-i18n-title]").forEach((element) => {
+    const value = dict[element.dataset.i18nTitle];
+    if (typeof value === "string") {
+      element.setAttribute("title", value);
+    }
+  });
+
+  langButtons.forEach((button) => {
+    const active = button.dataset.lang === lang;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+
+  try {
+    localStorage.setItem(STORAGE_KEY, lang);
+  } catch (error) {
+    /* storage can be unavailable in private mode — safe to ignore */
+  }
 }
 
-buttons.forEach((button) => {
+langButtons.forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.lang));
 });
 
-setLanguage(localStorage.getItem("preferred-language") || "en");
+let initialLanguage = "en";
+
+// ?lang=zh gives a shareable, directly-linkable Chinese page.
+const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
+
+if (requestedLanguage && translations[requestedLanguage]) {
+  initialLanguage = requestedLanguage;
+} else {
+  try {
+    initialLanguage = localStorage.getItem(STORAGE_KEY) || "en";
+  } catch (error) {
+    initialLanguage = "en";
+  }
+}
+
+setLanguage(translations[initialLanguage] ? initialLanguage : "en");
+
+/* --------------------------------------------------------------------------
+   Appearance: system by default, with a remembered manual override
+   -------------------------------------------------------------------------- */
+
+const THEME_KEY = "preferred-theme";
+const themeButtons = document.querySelectorAll(".theme-button");
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+function resolvedTheme() {
+  const explicit = document.documentElement.getAttribute("data-theme");
+  if (explicit === "light" || explicit === "dark") return explicit;
+  return darkQuery.matches ? "dark" : "light";
+}
+
+function syncThemeColor() {
+  if (themeMeta) {
+    themeMeta.setAttribute("content", resolvedTheme() === "dark" ? "#000000" : "#ffffff");
+  }
+}
+
+function setTheme(value) {
+  const choice = value === "light" || value === "dark" ? value : "system";
+
+  if (choice === "system") {
+    document.documentElement.removeAttribute("data-theme");
+  } else {
+    document.documentElement.setAttribute("data-theme", choice);
+  }
+
+  themeButtons.forEach((button) => {
+    const active = button.dataset.themeValue === choice;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+
+  try {
+    localStorage.setItem(THEME_KEY, choice);
+  } catch (error) {
+    /* storage can be unavailable in private mode — safe to ignore */
+  }
+
+  syncThemeColor();
+}
+
+themeButtons.forEach((button) => {
+  button.addEventListener("click", () => setTheme(button.dataset.themeValue));
+});
+
+let initialTheme = "system";
+try {
+  const storedTheme = localStorage.getItem(THEME_KEY);
+  if (storedTheme === "light" || storedTheme === "dark") initialTheme = storedTheme;
+} catch (error) {
+  initialTheme = "system";
+}
+
+setTheme(initialTheme);
+
+// Keep the browser chrome colour in step while following the system.
+if (typeof darkQuery.addEventListener === "function") {
+  darkQuery.addEventListener("change", syncThemeColor);
+}
+
+/* --------------------------------------------------------------------------
+   Footer year
+   -------------------------------------------------------------------------- */
+
+const yearElement = document.getElementById("year");
+if (yearElement) {
+  yearElement.textContent = String(new Date().getFullYear());
+}
+
+/* --------------------------------------------------------------------------
+   Header state on scroll
+   -------------------------------------------------------------------------- */
+
+const header = document.querySelector(".site-header");
+let scrollQueued = false;
+
+function updateHeader() {
+  if (header) {
+    header.classList.toggle("is-scrolled", window.scrollY > 8);
+  }
+  scrollQueued = false;
+}
+
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!scrollQueued) {
+      scrollQueued = true;
+      requestAnimationFrame(updateHeader);
+    }
+  },
+  { passive: true }
+);
+
+updateHeader();
+
+/* --------------------------------------------------------------------------
+   Scroll spy for nav highlighting
+   -------------------------------------------------------------------------- */
+
+const navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+
+if ("IntersectionObserver" in window && navLinks.length) {
+  const sections = navLinks
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+
+  const spy = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => {
+          const active = link.getAttribute("href") === `#${entry.target.id}`;
+          link.classList.toggle("is-active", active);
+          if (active) {
+            link.setAttribute("aria-current", "true");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      });
+    },
+    { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+  );
+
+  sections.forEach((section) => spy.observe(section));
+}
+
+/* --------------------------------------------------------------------------
+   Reveal on scroll
+   -------------------------------------------------------------------------- */
+
+const revealElements = Array.from(document.querySelectorAll("[data-reveal]"));
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if ("IntersectionObserver" in window && !prefersReducedMotion) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-in");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: "0px 0px -6% 0px", threshold: 0.05 }
+  );
+
+  revealElements.forEach((element) => revealObserver.observe(element));
+} else {
+  revealElements.forEach((element) => element.classList.add("is-in"));
+}

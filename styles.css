@@ -892,6 +892,13 @@ h2 {
   letter-spacing: -0.008em;
 }
 
+/* The 16ch measure is tuned for English; Chinese needs the full line, and
+   keep-all makes the headline wrap at the name instead of mid-phrase. */
+:lang(zh) h1 {
+  max-width: none;
+  word-break: keep-all;
+}
+
 :lang(zh) .lede,
 :lang(zh) .body-copy {
   line-height: 1.8;

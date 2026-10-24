@@ -10,15 +10,15 @@
     <meta property="og:description" content="Software development engineer building distributed systems and data infrastructure at AWS S3.">
     <title>Ken Liu | Software Engineer</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d1d1f'/%3E%3Ctext x='16' y='22' font-family='-apple-system,Segoe UI,sans-serif' font-size='16' font-weight='600' text-anchor='middle' fill='%23ffffff'%3EK%3C/text%3E%3C/svg%3E">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2">
     <script>
       // Apply the saved appearance before first paint to avoid a flash.
       (function () {
-        var root = document.documentElement;
-        root.classList.add("js");
         try {
           var saved = localStorage.getItem("preferred-theme");
-          if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+          if (saved === "light" || saved === "dark") {
+            document.documentElement.setAttribute("data-theme", saved);
+          }
         } catch (error) {}
       })();
     </script>
@@ -340,6 +340,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
   </body>
 </html>

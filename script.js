@@ -2,6 +2,10 @@
    Bilingual content (EN / 中文), scroll state, subtle scroll-spy, and
    reveal-on-scroll. No dependencies. */
 
+// Only opt into the "hidden until revealed" styling once this file actually
+// runs, so a blocked or failed script can never leave the page blank.
+document.documentElement.classList.add("js");
+
 const STORAGE_KEY = "preferred-language";
 
 const translations = {
@@ -415,10 +419,12 @@ if ("IntersectionObserver" in window && navLinks.length) {
 
 const revealElements = Array.from(document.querySelectorAll("[data-reveal]"));
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let observerAlive = false;
 
 if ("IntersectionObserver" in window && !prefersReducedMotion) {
   const revealObserver = new IntersectionObserver(
     (entries) => {
+      observerAlive = true;
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("is-in");
@@ -430,6 +436,14 @@ if ("IntersectionObserver" in window && !prefersReducedMotion) {
   );
 
   revealElements.forEach((element) => revealObserver.observe(element));
+
+  // Failsafe: if the observer never reports (some embedded browsers throttle it),
+  // show everything rather than leave the page looking empty.
+  window.setTimeout(() => {
+    if (!observerAlive) {
+      revealElements.forEach((element) => element.classList.add("is-in"));
+    }
+  }, 2000);
 } else {
   revealElements.forEach((element) => element.classList.add("is-in"));
 }
